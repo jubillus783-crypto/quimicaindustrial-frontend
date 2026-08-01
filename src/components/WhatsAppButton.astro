@@ -45,6 +45,8 @@ const whatsappUrl = `https://wa.me/${whatsappNumber}`;
 
     animate();
 
+button.addEventListener("click", () => { const g = (window as any).gtag; if (g) g("event", "conversion", { send_to: "AW-11226687225/oNweCN-WndocEPnNpukp" }); });
+
     button.addEventListener("mouseenter", () => {
       button.style.animationPlayState = "paused";
     });
