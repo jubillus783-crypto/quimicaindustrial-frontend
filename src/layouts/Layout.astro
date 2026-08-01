@@ -13,8 +13,8 @@ interface Props {
 }
 
 const {
-  title = "Química Industrial | Distribución de químicos en Perú",
-  description = "Distribuimos materias primas y químicos industriales en Perú. Logística ágil, soporte técnico y catálogo listo para integrarse con tu API de WordPress.",
+    title = "Venta de Productos Químicos en el Perú | Química Industrial",
+    description = "Distribuidores de productos químicos e insumos industriales en el Perú. Más de 350 productos, asesoría técnica y entrega a todo el país. Cotiza hoy.",
   canonical,
   noIndex,
 } = Astro.props as Props;
@@ -83,37 +83,18 @@ const ogImage = `${siteOrigin}/images/qi-logo-mobile.png`;
       content="3cfu4brwsjbg9zhoxqlamjo3zucnhl"
     />
 
-    <!-- Google Tag Manager - DataLayer -->
-    <script is:inline>
-      window.dataLayer = window.dataLayer || [];
-    </script>
-
-    <!-- Google Tag Manager -->
-    <script is:inline>
-      (function (w, d, s, l, i) {
-        w[l] = w[l] || [];
-        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
-        var f = d.getElementsByTagName(s)[0],
-          j = d.createElement(s),
-          dl = l != "dataLayer" ? "&l=" + l : "";
-        j.async = true;
-        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
-        f.parentNode.insertBefore(j, f);
-      })(window, document, "script", "dataLayer", "GTM-TDBJ79DR");
-    </script>
+<!-- Google tag (gtag.js) - Google Ads -->
+<script is:inline async src="https://www.googletagmanager.com/gtag/js?id=AW-11226687225"></script>
+<script is:inline>
+window.dataLayer = window.dataLayer || [];
+function gtag() { dataLayer.push(arguments); }
+gtag("js", new Date());
+gtag("config", "AW-11226687225");
+</script>
 
     <slot name="head" />
   </head>
   <body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript>
-      <iframe
-        src="https://www.googletagmanager.com/ns.html?id=GTM-TDBJ79DR"
-        height="0"
-        width="0"
-        style="display:none;visibility:hidden"></iframe>
-    </noscript>
-    <!-- End Google Tag Manager (noscript) -->
 
     <Header />
     <main>
