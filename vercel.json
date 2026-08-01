@@ -10,6 +10,10 @@
       "destination": "/products/:slug",
       "permanent": true
     },
+    {"source": "/categoria-producto/:path*", "destination": "/products", "permanent": true},
+    {"source": "/novedades", "destination": "/", "permanent": true},
+    {"source": "/novedades/:path*", "destination": "/", "permanent": true},
+    {"source": "/sin-categoria/:path*", "destination": "/products", "permanent": true},
     {
       "source": "/en/",
       "destination": "/",
