@@ -414,16 +414,7 @@ const { catalog } = Astro.props;
         return;
       }
 
-      // Show custom confirmation dialog
-      const confirmed = await showConfirm(
-        "¿Está seguro que desea enviar esta cotización?",
-        "Confirmar envío",
-        "Enviar Cotización",
-        false,
-      );
-      if (!confirmed) {
-        return;
-      }
+    
 
       // Collect form data
       const formData = new FormData(form);
