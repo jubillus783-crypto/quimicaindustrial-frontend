@@ -32,4 +32,9 @@ export default defineConfig({
       customPages: productUrls,
     }),
   ],
+  vite: {
+    ssr: {
+      external: ["nodemailer"],
+    },
+  },
 });
