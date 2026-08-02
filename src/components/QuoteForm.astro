@@ -414,8 +414,6 @@ const { catalog } = Astro.props;
         return;
       }
 
-    
-
       // Collect form data
       const formData = new FormData(form);
 
@@ -440,6 +438,9 @@ const { catalog } = Astro.props;
         if (productId && quantity && frequency) {
           products.push({
             productId,
+            productName:
+              item.querySelector("[data-product-select]")?.selectedOptions?.[0]
+                ?.text || null,
             presentationId,
             presentationLabel,
             quantity: parseInt(quantity),
@@ -487,6 +488,17 @@ const { catalog } = Astro.props;
         const result = await response.json();
 
         if (result.success) {
+          // Fire-and-forget: send confirmation + internal emails via our own API
+          fetch("/api/send-quote-email", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              quoteId: result.data?.id || null,
+              quote: quoteData,
+            }),
+            keepalive: true,
+          }).catch(() => {});
+
           // Clear cart before GTM fires so it doesn't block the callback
           if (window.qiCart) {
             window.qiCart.clear();
