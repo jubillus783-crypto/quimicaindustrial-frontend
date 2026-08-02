@@ -1,6 +1,31 @@
 {
   "redirects": [
     {
+      "source": "/contacto/",
+      "destination": "/contacto",
+      "permanent": true
+    },
+    {
+      "source": "/cotizacion/",
+      "destination": "/cotizacion",
+      "permanent": true
+    },
+    {
+      "source": "/gracias/",
+      "destination": "/gracias",
+      "permanent": true
+    },
+    {
+      "source": "/gracias-contacto/",
+      "destination": "/gracias-contacto",
+      "permanent": true
+    },
+    {
+      "source": "/products/",
+      "destination": "/products",
+      "permanent": true
+    },
+    {
       "source": "/producto/:slug/",
       "destination": "/products/:slug",
       "permanent": true
@@ -10,10 +35,41 @@
       "destination": "/products/:slug",
       "permanent": true
     },
-    {"source": "/categoria-producto/:path*", "destination": "/products", "permanent": true},
-    {"source": "/novedades", "destination": "/", "permanent": true},
-    {"source": "/novedades/:path*", "destination": "/", "permanent": true},
-    {"source": "/sin-categoria/:path*", "destination": "/products", "permanent": true},
+    {
+      "source": "/categoria-producto/:path*",
+      "destination": "/products",
+      "permanent": true
+    },
+    {
+      "source": "/categoria-producto/:path*/",
+      "destination": "/products",
+      "permanent": true
+    },
+    {
+      "source": "/sin-categoria/:path*",
+      "destination": "/products",
+      "permanent": true
+    },
+    {
+      "source": "/sin-categoria/:path*/",
+      "destination": "/products",
+      "permanent": true
+    },
+    {
+      "source": "/novedades",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/novedades/:path*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/novedades/:path*/",
+      "destination": "/",
+      "permanent": true
+    },
     {
       "source": "/en/",
       "destination": "/",
@@ -25,7 +81,7 @@
       "permanent": true
     },
     {
-      "source": "/:slug((?!(?:contacto|cotizacion|gracias|gracias-contacto|terminos-condiciones|politica-privacidad|products)$)[a-z0-9][a-z0-9-]*)/",
+      "source": "/:slug((?!(?:contacto|cotizacion|gracias|gracias-contacto|terminos-condiciones|politica-privacidad|products)(?:/|$))[a-z0-9][a-z0-9-]*)/",
       "destination": "/products/:slug",
       "permanent": true
     }
