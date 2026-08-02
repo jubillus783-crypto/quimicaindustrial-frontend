@@ -12,9 +12,25 @@ const pageDescription =
   description={pageDescription}
   canonical="https://www.quimicaindustrial.pe/gracias-contacto"
 >
-<script is:inline slot="head">
-gtag("event", "conversion", { send_to: "AW-11226687225/oNweCN-WndocEPnNpukp" });
-</script>
+  <script is:inline slot="head">
+    gtag("event", "conversion", {
+      send_to: "AW-11226687225/oNweCN-WndocEPnNpukp",
+    });
+    (function () {
+      var tries = 0;
+      function fireContact() {
+        if (typeof window.fbq === "function") {
+          window.fbq("track", "Contact", {
+            content_name: "Formulario de contacto",
+            content_category: "contacto",
+          });
+          return;
+        }
+        if (tries++ < 20) setTimeout(fireContact, 250);
+      }
+      fireContact();
+    })();
+  </script>
   <section class="gracias-section">
     <div class="container">
       <div class="gracias-card">
