@@ -439,8 +439,10 @@ const { catalog } = Astro.props;
           products.push({
             productId,
             productName:
+              item.querySelector(".search-select-input")?.value ||
               item.querySelector("[data-product-select]")?.selectedOptions?.[0]
-                ?.text || null,
+                ?.text ||
+              null,
             presentationId,
             presentationLabel,
             quantity: parseInt(quantity),
