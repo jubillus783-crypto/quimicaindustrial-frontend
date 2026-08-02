@@ -31,6 +31,15 @@ export default defineConfig({
     react(),
     sitemap({
       customPages: productUrls,
+      // Las paginas declaran su canonical SIN barra final (p. ej. /contacto).
+      // Por defecto el sitemap las publicaba CON barra ("/contacto/"), asi que
+      // Google recibia una URL distinta de la canonica y la descartaba del
+      // indice. Aqui normalizamos cada entrada a la forma canonica; la portada
+      // se deja como esta porque su canonical si es "/".
+      serialize(item) {
+        item.url = item.url.replace(/^(https?:\/\/[^/]+\/.+)\/$/, "$1");
+        return item;
+      },
     }),
   ],
   vite: {
