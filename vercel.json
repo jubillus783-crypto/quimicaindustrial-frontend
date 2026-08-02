@@ -26,6 +26,51 @@
       "permanent": true
     },
     {
+      "source": "/terminos-condiciones/",
+      "destination": "/terminos-condiciones",
+      "permanent": true
+    },
+    {
+      "source": "/politica-privacidad/",
+      "destination": "/politica-privacidad",
+      "permanent": true
+    },
+    {
+      "source": "/libro-reclamaciones/",
+      "destination": "/libro-reclamaciones",
+      "permanent": true
+    },
+    {
+      "source": "/terminos-y-condiciones",
+      "destination": "/terminos-condiciones",
+      "permanent": true
+    },
+    {
+      "source": "/terminos-y-condiciones/",
+      "destination": "/terminos-condiciones",
+      "permanent": true
+    },
+    {
+      "source": "/politica-de-privacidad",
+      "destination": "/politica-privacidad",
+      "permanent": true
+    },
+    {
+      "source": "/politica-de-privacidad/",
+      "destination": "/politica-privacidad",
+      "permanent": true
+    },
+    {
+      "source": "/reclamaciones",
+      "destination": "/libro-reclamaciones",
+      "permanent": true
+    },
+    {
+      "source": "/reclamaciones/",
+      "destination": "/libro-reclamaciones",
+      "permanent": true
+    },
+    {
       "source": "/producto/:slug/",
       "destination": "/products/:slug",
       "permanent": true
@@ -81,7 +126,7 @@
       "permanent": true
     },
     {
-      "source": "/:slug((?!(?:contacto|cotizacion|gracias|gracias-contacto|terminos-condiciones|politica-privacidad|products)(?:/|$))[a-z0-9][a-z0-9-]*)/",
+      "source": "/:slug((?!(?:contacto|cotizacion|gracias|gracias-contacto|terminos-condiciones|politica-privacidad|libro-reclamaciones|products)(?:/|$))[a-z0-9][a-z0-9-]*)/",
       "destination": "/products/:slug",
       "permanent": true
     }
