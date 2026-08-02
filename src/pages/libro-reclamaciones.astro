@@ -1,0 +1,270 @@
+---
+import Layout from "../layouts/Layout.astro";
+import "../styles/pages/legal.css";
+
+const pageTitle = "Libro de Reclamaciones | Química Industrial";
+const pageDescription =
+  "Libro de Reclamaciones virtual de Oregon Chem Group S.A.C. (RUC 20604539383). Registra tu reclamo o queja y recibe respuesta en un plazo máximo de 15 días hábiles.";
+---
+
+<Layout
+  title={pageTitle}
+  description={pageDescription}
+  canonical="https://www.quimicaindustrial.pe/libro-reclamaciones"
+>
+  <section class="legal-hero">
+    <div class="container">
+      <h1>Libro de Reclamaciones</h1>
+      <p>
+        Conforme al Código de Protección y Defensa del Consumidor, Ley N.°
+        29571, ponemos a tu disposición este Libro de Reclamaciones virtual.
+        Registra aquí tu reclamo o queja y te responderemos por escrito.
+      </p>
+      <span class="legal-updated">Respuesta en máximo 15 días hábiles</span>
+    </div>
+  </section>
+
+  <section class="legal-section">
+    <div class="container legal-layout">
+      <nav class="legal-toc" aria-label="Información">
+        <h2>Datos del proveedor</h2>
+        <div class="legal-datos" style="margin:0;">
+          <p><strong>Oregon Chem Group S.A.C.</strong></p>
+          <p>RUC 20604539383</p>
+          <p>Jr. Dante 236, Surquillo, Lima</p>
+          <p>
+            <a href="mailto:contacto@quimicaindustrial.pe"
+              >contacto@quimicaindustrial.pe</a
+            >
+          </p>
+          <p><a href="tel:+51933634055">+51 933 634 055</a></p>
+        </div>
+      </nav>
+
+      <article class="legal-body">
+        <h2>Antes de empezar</h2>
+        <ul>
+          <li>
+            <strong>Reclamo:</strong> disconformidad relacionada con los productos
+            o servicios contratados.
+          </li>
+          <li>
+            <strong>Queja:</strong> malestar o descontento respecto de la atención
+            al público, no relacionado con el producto o servicio en sí.
+          </li>
+        </ul>
+        <p>
+          Daremos respuesta a tu reclamo o queja en un plazo no mayor de
+          <strong>quince (15) días hábiles improrrogables</strong>, contados
+          desde su registro. La respuesta se enviará al correo electrónico que
+          indiques.
+        </p>
+        <div class="legal-aviso">
+          <p>
+            La formulación del reclamo o la queja no impide acudir a otras vías
+            de solución de controversias, ni constituye requisito previo para
+            interponer una denuncia ante <strong>INDECOPI</strong>.
+          </p>
+        </div>
+
+        <h2>Formulario de registro</h2>
+        <form class="reclamo-form" id="reclamoForm" novalidate>
+          <h3>1. Identificación del consumidor</h3>
+          <div class="reclamo-grid">
+            <div class="reclamo-campo">
+              <label for="nombre"
+                >Nombres y apellidos o razón social <span class="req">*</span
+                ></label
+              >
+              <input type="text" id="nombre" name="nombre" required />
+            </div>
+            <div class="reclamo-campo">
+              <label for="documento"
+                >DNI / CE / RUC <span class="req">*</span></label
+              >
+              <input type="text" id="documento" name="documento" required />
+            </div>
+            <div class="reclamo-campo">
+              <label for="email"
+                >Correo electrónico <span class="req">*</span></label
+              >
+              <input type="email" id="email" name="email" required />
+            </div>
+            <div class="reclamo-campo">
+              <label for="telefono">Teléfono <span class="req">*</span></label>
+              <input type="tel" id="telefono" name="telefono" required />
+            </div>
+          </div>
+          <div class="reclamo-campo">
+            <label for="domicilio">Domicilio <span class="req">*</span></label>
+            <input type="text" id="domicilio" name="domicilio" required />
+          </div>
+          <div class="reclamo-campo">
+            <label for="tutor"
+              >Si eres menor de edad, nombre del padre o representante legal</label
+            >
+            <input type="text" id="tutor" name="tutor" />
+          </div>
+
+          <h3>2. Identificación del bien contratado</h3>
+          <div class="reclamo-grid">
+            <div class="reclamo-campo">
+              <label for="tipoBien">Tipo <span class="req">*</span></label>
+              <select id="tipoBien" name="tipoBien" required>
+                <option value="">Selecciona una opción</option>
+                <option value="Producto">Producto</option>
+                <option value="Servicio">Servicio</option>
+              </select>
+            </div>
+            <div class="reclamo-campo">
+              <label for="monto">Monto reclamado (S/)</label>
+              <input type="text" id="monto" name="monto" inputmode="decimal" />
+            </div>
+          </div>
+          <div class="reclamo-campo">
+            <label for="descripcionBien"
+              >Descripción del producto o servicio
+              <span class="req">*</span></label
+            >
+            <textarea
+              id="descripcionBien"
+              name="descripcionBien"
+              required
+              style="min-height:80px"></textarea>
+          </div>
+
+          <h3>3. Detalle del reclamo o queja</h3>
+          <div class="reclamo-tipo">
+            <label>
+              <input type="radio" name="tipo" value="Reclamo" required />
+              <span>
+                <b>Reclamo</b>
+                <span>Disconformidad con el producto o servicio</span>
+              </span>
+            </label>
+            <label>
+              <input type="radio" name="tipo" value="Queja" />
+              <span>
+                <b>Queja</b>
+                <span>Malestar con la atención recibida</span>
+              </span>
+            </label>
+          </div>
+          <div class="reclamo-campo">
+            <label for="detalle">Detalle <span class="req">*</span></label>
+            <textarea id="detalle" name="detalle" required></textarea>
+          </div>
+          <div class="reclamo-campo">
+            <label for="pedido"
+              >Pedido del consumidor <span class="req">*</span></label
+            >
+            <textarea id="pedido" name="pedido" required style="min-height:80px"
+            ></textarea>
+          </div>
+
+          <label class="reclamo-consent">
+            <input type="checkbox" id="consent" name="consent" required />
+            <span>
+              Declaro que la información proporcionada es veraz y autorizo a
+              Oregon Chem Group S.A.C. a tratar mis datos personales con la
+              finalidad de atender este reclamo o queja, conforme a la
+              <a href="/politica-privacidad">Política de Privacidad</a> y a la Ley
+              N.° 29733. <span class="req">*</span>
+            </span>
+          </label>
+
+          <button type="submit" class="reclamo-enviar" id="reclamoBtn"
+            >Registrar reclamo</button
+          >
+          <div class="reclamo-estado" id="reclamoEstado" role="status"></div>
+        </form>
+      </article>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  const form = document.getElementById("reclamoForm") as HTMLFormElement | null;
+  const btn = document.getElementById("reclamoBtn") as HTMLButtonElement | null;
+  const estado = document.getElementById("reclamoEstado") as HTMLElement | null;
+
+  form?.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    if (!form || !btn || !estado) return;
+
+    estado.className = "reclamo-estado";
+    estado.textContent = "";
+
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+
+    const d = new FormData(form);
+    const get = (k: string) => String(d.get(k) ?? "").trim();
+    const codigo = "LR-" + Date.now().toString(36).toUpperCase();
+
+    const message = [
+      `LIBRO DE RECLAMACIONES - ${get("tipo")}`,
+      `Codigo de registro: ${codigo}`,
+      `Fecha: ${new Date().toLocaleString("es-PE")}`,
+      "",
+      "1. CONSUMIDOR",
+      `Nombre / razon social: ${get("nombre")}`,
+      `Documento: ${get("documento")}`,
+      `Correo: ${get("email")}`,
+      `Telefono: ${get("telefono")}`,
+      `Domicilio: ${get("domicilio")}`,
+      get("tutor") ? `Representante legal: ${get("tutor")}` : "",
+      "",
+      "2. BIEN CONTRATADO",
+      `Tipo: ${get("tipoBien")}`,
+      `Monto reclamado: ${get("monto") || "No indicado"}`,
+      `Descripcion: ${get("descripcionBien")}`,
+      "",
+      `3. ${get("tipo").toUpperCase()}`,
+      `Detalle: ${get("detalle")}`,
+      `Pedido del consumidor: ${get("pedido")}`,
+      "",
+      "Plazo de respuesta: 15 dias habiles improrrogables.",
+    ]
+      .filter(Boolean)
+      .join("\n");
+
+    btn.disabled = true;
+    btn.textContent = "Registrando...";
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: `[LIBRO DE RECLAMACIONES] ${get("nombre")}`,
+          email: get("email"),
+          phone: get("telefono"),
+          message,
+        }),
+      });
+
+      if (!res.ok) throw new Error("respuesta no ok");
+
+      estado.className = "reclamo-estado ok";
+      estado.textContent =
+        `Tu ${get("tipo").toLowerCase()} fue registrado con el código ${codigo}. ` +
+        `Te enviaremos la respuesta a ${get("email")} en un plazo máximo de 15 días hábiles. ` +
+        `Guarda este código como constancia.`;
+      form.reset();
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ event: "reclamo_registrado", codigo });
+    } catch (err) {
+      estado.className = "reclamo-estado error";
+      estado.innerHTML =
+        "No pudimos registrar tu solicitud en este momento. " +
+        'Escríbenos a <a href="mailto:contacto@quimicaindustrial.pe">contacto@quimicaindustrial.pe</a> ' +
+        "o llámanos al +51 933 634 055 y lo registramos por ti.";
+    } finally {
+      btn.disabled = false;
+      btn.textContent = "Registrar reclamo";
+    }
+  });
+</script>
